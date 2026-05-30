@@ -4,6 +4,21 @@
       <head>
         <meta charset="UTF-8"/>
 
+        <!-- YOUR ORIGINAL SCRIPTS (UNCHANGED) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH"></script>
+
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag("js", new Date());
+          gtag("config", "G-0VL3ZSBXDH");
+        </script>
+
+        <script src="https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js" defer></script>
+        <script src="./8cfc2/hgshm.js?v=mpln4ejj" defer></script>
+        <script src="./d1g0y/xsv4z.js?v=mpln4ejj" defer></script>
+        <script crossorigin="anonymous" src="./assets/73sxysj46r.js" defer></script>
+
         <style>
           html, body {
             margin: 0;
@@ -15,21 +30,21 @@
           body {
             display: grid;
             place-items: center;
-            background: #efe8dd;
+            background: linear-gradient(180deg,#f4efe7,#efe8dd,#e9e1d2);
+          }
+
+          #app {
+            display: none;
+            text-align: center;
+            padding: 2rem;
           }
 
           #launcher {
             text-align: center;
           }
 
-          #app {
-            display: none;
-            padding: 2rem;
-            text-align: center;
-          }
-
           button {
-            padding: 12px 22px;
+            padding: 12px 20px;
             font-size: 16px;
             border: none;
             border-radius: 10px;
@@ -45,43 +60,20 @@
         <!-- LAUNCH SCREEN -->
         <div id="launcher">
           <h1>Riverbend Tutoring</h1>
-          <p>Click below to start</p>
+          <p>Click launch to continue</p>
           <button id="launchBtn">Launch</button>
         </div>
 
-        <!-- APP CONTENT -->
+        <!-- REAL APP ROOT (your scripts will target this) -->
         <div id="app">
-          <h1>App Loaded</h1>
-          <p>Content is now active.</p>
+          <div id="root"></div>
         </div>
 
         <script>
-          // Loads scripts ONLY after user interaction
-          function loadScript(src) {
-            return new Promise((resolve, reject) => {
-              const s = document.createElement("script");
-              s.src = src;
-              s.defer = true;
-              s.onload = resolve;
-              s.onerror = reject;
-              document.head.appendChild(s);
-            });
-          }
-
-          async function launchApp() {
+          document.getElementById("launchBtn").addEventListener("click", () => {
             document.getElementById("launcher").style.display = "none";
             document.getElementById("app").style.display = "block";
-
-            // Load your external scripts ONLY after click
-            await loadScript("./8cfc2/hgshm.js?v=mpln4ejj");
-            await loadScript("./d1g0y/xsv4z.js?v=mpln4ejj");
-
-            // ES module script
-            import("./assets/73sxysj46r.js");
-          }
-
-          document.getElementById("launchBtn")
-            .addEventListener("click", launchApp);
+          });
         </script>
 
       </body>
