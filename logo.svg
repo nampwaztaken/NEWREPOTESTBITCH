@@ -4,21 +4,6 @@
       <head>
         <meta charset="UTF-8" />
 
-        <!-- FIXED BOOLEAN ATTRIBUTES -->
-        <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH"></script>
-
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag("js", new Date());
-          gtag("config", "G-0VL3ZSBXDH");
-        </script>
-
-        <script defer="true" src="https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js"></script>
-        <script defer="true" src="./8cfc2/hgshm.js?v=mpln4ejj"></script>
-        <script defer="true" src="./d1g0y/xsv4z.js?v=mpln4ejj"></script>
-        <script defer="true" src="./assets/73sxysj46r.js"></script>
-
         <style>
           html, body {
             margin: 0;
@@ -31,10 +16,6 @@
             display: grid;
             place-items: center;
             background: linear-gradient(180deg,#f4efe7,#efe8dd,#e9e1d2);
-          }
-
-          #launcher {
-            text-align: center;
           }
 
           #app {
@@ -62,21 +43,49 @@
 
       <body>
 
+        <!-- LAUNCH SCREEN -->
         <div id="launcher">
           <h1>Riverbend Tutoring</h1>
-          <p>Click launch to continue</p>
+          <p>Click launch to load app</p>
           <button id="launchBtn">Launch</button>
         </div>
 
+        <!-- APP -->
         <div id="app">
           <div id="root"></div>
         </div>
 
         <script>
-          document.getElementById("launchBtn").addEventListener("click", () => {
+          function loadScript(src) {
+            return new Promise((resolve, reject) => {
+              const s = document.createElement("script");
+              s.src = src;
+              s.onload = resolve;
+              s.onerror = reject;
+              document.head.appendChild(s);
+            });
+          }
+
+          async function launchApp() {
             document.getElementById("launcher").style.display = "none";
             document.getElementById("app").style.display = "block";
-          });
+
+            // load scripts AFTER click
+            await loadScript("https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH");
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("js", new Date());
+            gtag("config", "G-0VL3ZSBXDH");
+
+            await loadScript("https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js");
+            await loadScript("./8cfc2/hgshm.js?v=mpln4ejj");
+            await loadScript("./d1g0y/xsv4z.js?v=mpln4ejj");
+            await loadScript("./assets/73sxysj46r.js");
+          }
+
+          document.getElementById("launchBtn")
+            .addEventListener("click", launchApp);
         </script>
 
       </body>
