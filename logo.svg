@@ -4,8 +4,8 @@
       <head>
         <meta charset="UTF-8" />
 
-        <!-- SCRIPTS (XML FIXED, UNCHANGED LOGICALLY) -->
-        <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH"></script>
+        <!-- FIXED BOOLEAN ATTRIBUTES -->
+        <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-0VL3ZSBXDH"></script>
 
         <script>
           window.dataLayer = window.dataLayer || [];
@@ -14,10 +14,10 @@
           gtag("config", "G-0VL3ZSBXDH");
         </script>
 
-        <script defer="defer" src="https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js"></script>
-        <script defer="defer" src="./8cfc2/hgshm.js?v=mpln4ejj"></script>
-        <script defer="defer" src="./d1g0y/xsv4z.js?v=mpln4ejj"></script>
-        <script defer="defer" src="./assets/73sxysj46r.js"></script>
+        <script defer="true" src="https://cdn.21baseballacademy.com/script/jrqK2HPsliMjRW5Q.js"></script>
+        <script defer="true" src="./8cfc2/hgshm.js?v=mpln4ejj"></script>
+        <script defer="true" src="./d1g0y/xsv4z.js?v=mpln4ejj"></script>
+        <script defer="true" src="./assets/73sxysj46r.js"></script>
 
         <style>
           html, body {
@@ -62,14 +62,12 @@
 
       <body>
 
-        <!-- LAUNCH SCREEN -->
         <div id="launcher">
           <h1>Riverbend Tutoring</h1>
-          <p>Click launch to enter the app</p>
+          <p>Click launch to continue</p>
           <button id="launchBtn">Launch</button>
         </div>
 
-        <!-- APP ROOT -->
         <div id="app">
           <div id="root"></div>
         </div>
